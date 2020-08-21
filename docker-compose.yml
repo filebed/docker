@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  db:
+    image: zenw/filebed
+    container_name: filedbed_container
+    ports:
+      - "8686:80"
+    volumes:
+      - "~/Filebed:/files"
