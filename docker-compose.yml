@@ -3,7 +3,6 @@ version: "3.7"
 services:
   filedbed:
     build: .
-    platform: linux/amd64
     container_name: filedbed_container
     ports:
       - "8686:80"
