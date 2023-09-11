@@ -1,4 +1,4 @@
-FROM php:7.1.3-apache
+FROM php:7.2-apache
 
 RUN apt-get update && \
     apt-get install unzip && \
@@ -13,6 +13,7 @@ RUN apt-get update && \
     rm -rf elFinder/php/connector.minimal.php-dist* && \
     mv elFinder/elfinder.html elFinder/index.html && \
     rm -rf elFinder/files && \
+    echo '<?php header("Location: /elFinder"); ?>'> index.php && \
     ln -s /files /var/www/html/elFinder/files
 
 VOLUME /files
